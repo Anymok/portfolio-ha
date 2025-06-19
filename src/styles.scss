@@ -102,7 +102,6 @@ html::before {
   background: 
     radial-gradient(circle 150px at 10% 20%, rgba(136, 0, 255, 0.2) 0%, rgba(255, 0, 128, 0.0) 200%),
     radial-gradient(circle 150px at 80% 80%, rgba(0, 128, 255, 0.3) 0%, rgba(255, 0, 128, 0.0) 200%),
-    radial-gradient(circle 100px at 50% 60%, rgba(255, 0, 128, 0.2) 0%, rgba(255, 0, 128, 0.0) 200%),
     radial-gradient(circle 200px at 20% 90%, rgba(255, 187, 0, 0.1) 0%, rgba(0, 255, 255, 0.0) 150%),
     radial-gradient(circle 200px at 90% 10%, rgba(0, 255, 255, 0.2) 0%, rgba(0, 255, 255, 0.0) 150%);
   animation: floating-circles 15s ease-in-out infinite;
@@ -141,6 +140,122 @@ html::before {
   100% { 
     transform: translate(0px, 0px) rotate(0deg); 
   }
+}
+
+// ========================================
+// ANIMATION DES CERCLES DYNAMIQUES
+// ========================================
+@keyframes floating-circles-dynamic {
+  0% { 
+    transform: translate(0px, 0px) scale(1); 
+  }
+  25% { 
+    transform: translate(-40px, 30px) scale(1.1); 
+  }
+  50% { 
+    transform: translate(30px, -30px) scale(0.9); 
+  }
+  75% { 
+    transform: translate(-30px, -20px) scale(1.2); 
+  }
+  100% { 
+    transform: translate(0px, 0px) scale(1); 
+  }
+}
+
+.background-circles-dynamic {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(circle 180px at 50% 50%, rgba(255, 0, 221, 0.15) 0%, rgba(255, 0, 221, 0.0) 150%),
+    radial-gradient(circle 220px at 50% 50%, rgba(0, 255, 149, 0.2) 0%, rgba(0, 255, 149, 0.0) 150%),
+    radial-gradient(circle 200px at 50% 50%, rgba(255, 196, 0, 0.15) 0%, rgba(255, 196, 0, 0.0) 150%);
+  animation: floating-circles-dynamic 3s ease-in-out infinite;
+}
+
+// ========================================
+// ANIMATIONS DES CERCLES DYNAMIQUES
+// ========================================
+@keyframes circle-top-left {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    transform: translate(calc(-50% - 200px), calc(-50% - 200px)) scale(1.2); 
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+}
+
+@keyframes circle-right {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    transform: translate(calc(-50% + 200px), -50%) scale(1.2); 
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+}
+
+@keyframes circle-bottom {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    transform: translate(-50%, calc(-50% + 200px)) scale(1.2); 
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+}
+
+.circle-pink {
+  content: '';
+  position: fixed;
+  top: 50%; 
+  left: 50%;
+  width: 100vw; 
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle 180px at 50% 50%, rgba(255, 0, 221, 0.15) 0%, rgba(255, 0, 221, 0.0) 150%);
+  animation: circle-top-left 3s ease-in-out infinite;
+}
+
+.circle-green {
+  content: '';
+  position: fixed;
+  top: 50%; 
+  left: 50%;
+  width: 100vw; 
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle 220px at 50% 50%, rgba(0, 128, 255, 0.2) 0%, rgba(0, 255, 149, 0.0) 150%);
+  animation: circle-right 3s ease-in-out infinite;
+}
+
+.circle-yellow {
+  content: '';
+  position: fixed;
+  top: 50%; 
+  left: 50%;
+  width: 100vw; 
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle 200px at 50% 50%, rgba(255, 196, 0, 0.15) 0%, rgba(255, 196, 0, 0.0) 150%);
+  animation: circle-bottom 3s ease-in-out infinite;
 }
 
 // ========================================
