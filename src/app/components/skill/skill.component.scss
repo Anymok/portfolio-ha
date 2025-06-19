@@ -38,6 +38,60 @@
         letter-spacing: -0.01em;
     }
 
+    .skill-type-selector {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 3rem;
+        background: rgba(15, 15, 15, 0.8);
+        padding: 0.75rem;
+        border-radius: 100px;
+        width: fit-content;
+        min-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        button {
+            flex: 1;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 100px;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+
+            &:hover:not(.active) {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            &.active {
+                color: #ffffff;
+                background: linear-gradient(90deg, #4a6bff 0%, #7d4fff 100%);
+                box-shadow: 0 4px 15px rgba(74, 107, 255, 0.3);
+            }
+        }
+
+        @media (max-width: 768px) {
+            min-width: 300px;
+            padding: 0.5rem;
+
+            button {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
     .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

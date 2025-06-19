@@ -4,45 +4,27 @@
             <span class="highlight">Compétences</span>
         </h1>
         <p class="description" [@fadeInUp] style="animation-delay: 20s;">
-            Voici les technologies que je pratique en entreprise depuis 3 ans. Pour les projets personnels, j'utilise d'autres technologies tel que React, Spring Boot, Ionic.
-        </p>        
+            J'ai catégorisé mes compétences en professionnelles et personnelles. Les compétences professionnelles sont celles que j'utilise en entreprise depuis 3 ans. Les compétences personnelles sont celles que j'utilise pour des projets personnels.
+        </p>
+        <div class="skill-type-selector">
+            <button 
+                [class.active]="selectedSkillType === 'professional'"
+                (click)="switchSkillType('professional')">
+                Professionnelles
+            </button>
+            <button 
+                [class.active]="selectedSkillType === 'personal'"
+                (click)="switchSkillType('personal')">
+                Personnelles
+            </button>
+        </div>
         <div class="skills-grid">
-            <div class="skill-card">
-                <img src="/icons/angular.png" alt="Angular">
-                <span>Angular</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/django.svg" alt="Django">
-                <span>Django</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/gcp.png" alt="Google Cloud Platform">
-                <span>Google Cloud Platform</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/html5.png" alt="HTML5">
-                <span>HTML</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/css3.png" alt="CSS3">
-                <span>CSS</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/typescript.png" alt="TypeScript">
-                <span>TypeScript</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/python.webp" alt="Python">
-                <span>Python</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/mysql.png" alt="MySQL">
-                <span>MySQL</span>
-            </div>
-            <div class="skill-card">
-                <img src="/icons/postgresql.png" alt="PostgreSQL">
-                <span>PostgreSQL</span>
-            </div>
+            @for (skill of currentSkills; track skill.name) {
+                <div class="skill-card">
+                    <img [src]="skill.icon" [alt]="skill.name">
+                    <span>{{ skill.name }}</span>
+                </div>
+            }
         </div>
     </div>
 </section>
