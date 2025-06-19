@@ -1,9 +1,55 @@
 <section class="project-container">
     <div class="content">
-        <div class="text-content">
-            <h1 class="title">
-                <span class="highlight">Projets</span>
-            </h1>
+        <h1 class="title">
+            <span class="highlight">Projets</span>
+        </h1>
+        <p class="description">
+            Découvrez mes projets personnels développés avec passion et créativité. Chaque projet représente une étape de mon apprentissage et de mon évolution en tant que développeur.
+        </p>
+        
+        <div class="projects-grid">
+            @for (project of projects; track project.id) {
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        
+                        <div class="project-tech">
+                            @for (tech of project.technologies; track tech) {
+                                <span class="tech-badge">{{ tech }}</span>
+                            }
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a 
+                                [href]="project.repository" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="btn btn-primary">
+                                <i class="fab fa-github"></i>
+                                <span>Repository</span>
+                            </a>
+                            <div class="tooltip-container" *ngIf="!project.demo">
+                                <a 
+                                    href="#" 
+                                    class="btn btn-secondary disabled">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                            <a 
+                                *ngIf="project.demo"
+                                [href]="project.demo" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="btn btn-secondary">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </section>
