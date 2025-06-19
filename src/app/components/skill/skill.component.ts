@@ -15,6 +15,7 @@ export class SkillComponent {
     { name: 'Google Cloud Platform', icon: '/icons/gcp.png' },
     { name: 'HTML', icon: '/icons/html5.png' },
     { name: 'CSS', icon: '/icons/css3.png' },
+    { name: 'SCSS', icon: '/icons/scss.png' },
     { name: 'TypeScript', icon: '/icons/typescript.png' },
     { name: 'Python', icon: '/icons/python.webp' },
     { name: 'MySQL', icon: '/icons/mysql.png' },

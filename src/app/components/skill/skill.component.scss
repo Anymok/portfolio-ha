@@ -78,6 +78,8 @@
                 color: #ffffff;
                 background: linear-gradient(90deg, #4a6bff 0%, #7d4fff 100%);
                 box-shadow: 0 4px 15px rgba(74, 107, 255, 0.3);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
             }
         }
 
