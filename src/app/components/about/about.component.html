@@ -1,24 +1,24 @@
 <section class="about-container">
     <div class="content">
         <div class="text-content">
-            <h1 class="title">
+            <h1 class="title" [@fadeInUp]>
                 Développeur
                 <span class="highlight">Full Stack</span>
             </h1>
-            <h2 class="subtitle">DevOps</h2>
-            <p class="description">
+            <h2 class="subtitle" [@fadeInUp] style="animation-delay: 2s;">DevOps</h2>
+            <p class="description" [@fadeInUp] style="animation-delay: 20s;">
                 Je suis un développeur full stack passionné par la création d'expériences digitales qui sont fluides, scalables et modernes.
             </p>
 
-            <div class="skills">
-                <span class="skill-badge">Angular</span>
-                <span class="skill-badge">Django/Python</span>
-                <span class="skill-badge">Google Cloud Platform</span>
-                <span class="skill-badge">PostgreSQL</span>
-                <span class="skill-badge">Framework Scrum (Agilité)</span>
+            <div class="skills" [@staggerAnimation]>
+                <span class="skill-badge" [@skillBadgeAnimation]>Angular</span>
+                <span class="skill-badge" [@skillBadgeAnimation]>Django/Python</span>
+                <span class="skill-badge" [@skillBadgeAnimation]>Google Cloud Platform</span>
+                <span class="skill-badge" [@skillBadgeAnimation]>PostgreSQL</span>
+                <span class="skill-badge" [@skillBadgeAnimation]>Framework Scrum (Agilité)</span>
             </div>
 
-            <div class="actions">
+            <div class="actions" [@fadeInUp] style="animation-delay: 8s;">
                 <a href="#projects" class="btn btn-primary">
                     <span>Projets</span>
                     <i class="fas fa-external-link-alt"></i>
@@ -29,21 +29,21 @@
                 </a>
             </div>
 
-            <div class="social-links">
-                <a href="https://github.com/Anymok" class="social-link" target="_blank" rel="noopener noreferrer">
+            <div class="social-links" [@staggerAnimation]>
+                <a href="https://github.com/Anymok" class="social-link" target="_blank" rel="noopener noreferrer" [@socialLinkAnimation]>
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://gitlab.com/Anymok" class="social-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://gitlab.com/Anymok" class="social-link" target="_blank" rel="noopener noreferrer" [@socialLinkAnimation]>
                     <i class="fab fa-gitlab"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/arthur-heude/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/arthur-heude/" class="social-link" target="_blank" rel="noopener noreferrer" [@socialLinkAnimation]>
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
         </div>
-        <div class="illustration">
-            <!-- Vous pouvez ajouter ici une image SVG ou utiliser l'image de votre choix -->
-            <img src="assets/images/dev-illustration.svg" alt="Developer Illustration">
+        <div class="illustration" [@fadeInUp] style="animation-delay: 0.6s;">
+            <!-- Conteneur pour l'animation Lottie -->
+            <div #lottieContainer class="lottie-container"></div>
         </div>
     </div>
 </section>

@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./components/header/header.component";
-import { ProjectComponent } from "./components/project/project.component";
-import { SkillComponent } from "./components/skill/skill.component";
-import { ContactComponent } from "./components/contact/contact.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { AboutComponent } from "./components/about/about.component";
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ProjectComponent, SkillComponent, ContactComponent, FooterComponent, AboutComponent],
+  imports: [AppModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

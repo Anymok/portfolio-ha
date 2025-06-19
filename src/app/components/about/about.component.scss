@@ -159,6 +159,12 @@
         flex: 1;
         max-width: 500px;
 
+        .lottie-container {
+            width: 100%;
+            height: 400px;
+            animation: float 6s ease-in-out infinite;
+        }
+
         img {
             width: 100%;
             height: auto;
@@ -167,6 +173,10 @@
 
         @media (max-width: 768px) {
             max-width: 300px;
+            
+            .lottie-container {
+                height: 250px;
+            }
         }
     }
 }
