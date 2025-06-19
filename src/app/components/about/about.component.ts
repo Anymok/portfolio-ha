@@ -59,9 +59,15 @@ export class AboutComponent implements OnInit, OnDestroy {
     });
   }
 
-  scrollToSection(event: Event, sectionId: string) {
+  scrollToSection(event: Event, sectionId: string): void {
     event.preventDefault();
-    this.scrollService.scrollToSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
 
   ngOnDestroy() {
