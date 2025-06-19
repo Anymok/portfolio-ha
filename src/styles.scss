@@ -54,18 +54,7 @@ html {
 // ========================================
 // Fond noir avec cadrillage gris de carrés de 10px
 html::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(128, 128, 128, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  pointer-events: none;
-  z-index: -1;
+  display: none;
 }
 
 // ========================================
@@ -258,6 +247,38 @@ html::before {
   animation: circle-bottom 3s ease-in-out infinite;
 }
 
+.grid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  background-image: 
+    linear-gradient(rgba(128, 128, 128, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  -webkit-mask: 
+    /* Cercles statiques du background */
+    radial-gradient(circle 300px at 10% 20%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 80% 80%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 20% 90%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 90% 10%, black 0%, transparent 200%) center,
+    /* Cercles animés du centre */
+    radial-gradient(circle 300px at 50% 50%, black 0%, transparent 150%) center;
+  -webkit-mask-composite: add;
+  mask: 
+    /* Cercles statiques du background */
+    radial-gradient(circle 300px at 10% 20%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 80% 80%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 20% 90%, black 0%, transparent 200%) center,
+    radial-gradient(circle 300px at 90% 10%, black 0%, transparent 200%) center,
+    /* Cercles animés du centre */
+    radial-gradient(circle 300px at 50% 50%, black 0%, transparent 150%) center;
+  mask-composite: add;
+}
+
 // ========================================
 // STYLES GLOBAUX DU BODY
 // ========================================
@@ -271,3 +292,4 @@ body {
 }
 
 html, body { height: 100%; }
+
