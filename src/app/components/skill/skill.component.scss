@@ -8,6 +8,10 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem;
+        
+        @media (max-width: 768px) {
+            padding: 1rem;
+        }
     }
 
     .title {
@@ -23,6 +27,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
     }
     
     .description {
@@ -36,6 +50,12 @@
         margin-left: auto;
         margin-right: auto;
         letter-spacing: -0.01em;
+        
+        @media (max-width: 768px) {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
+        }
     }
 
     .skill-type-selector {
@@ -69,6 +89,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 1;
+            min-height: 44px; // Taille minimale pour le touch
 
             &:hover:not(.active) {
                 color: rgba(255, 255, 255, 0.9);
@@ -86,10 +107,22 @@
         @media (max-width: 768px) {
             min-width: 300px;
             padding: 0.5rem;
+            margin-bottom: 2rem;
 
             button {
                 padding: 0.75rem 1.5rem;
                 font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            min-width: 280px;
+            flex-direction: column;
+            border-radius: 20px;
+            
+            button {
+                border-radius: 15px;
+                margin: 0.25rem 0;
             }
         }
     }
@@ -100,6 +133,17 @@
         gap: 2.5rem;
         justify-items: center;
         padding: 1rem;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            padding: 0.5rem;
+        }
+        
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
     }
 
     .skill-card {
@@ -164,17 +208,11 @@
             color: #ffffff;
             letter-spacing: -0.01em;
         }
-    }
-
-    @media (max-width: 768px) {
-        .skills-grid {
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
+        
+        @media (max-width: 768px) {
             width: 120px;
             height: 120px;
+            padding: 0.75rem;
 
             img {
                 width: 50px;
@@ -185,10 +223,44 @@
                 font-size: 0.9rem;
             }
         }
+        
+        @media (max-width: 480px) {
+            width: 100px;
+            height: 100px;
+            padding: 0.5rem;
 
-        .title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            span {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+// Optimisation des animations pour mobile
+@media (max-width: 768px) {
+    .skill-card {
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+// Désactiver les animations si l'utilisateur préfère moins de mouvement
+@media (prefers-reduced-motion: reduce) {
+    .skill-card {
+        transition: none;
+        
+        &:hover {
+            transform: none;
+        }
+        
+        img {
+            transition: none;
         }
     }
 }

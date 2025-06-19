@@ -1,5 +1,18 @@
 <nav class="custom-navbar" [@navAnimation]>
-  <ul>
+  <!-- Menu hamburger pour mobile -->
+  <div class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Logo/Nom pour mobile -->
+  <div class="mobile-logo">
+    <span>AH</span>
+  </div>
+
+  <!-- Menu desktop -->
+  <ul class="desktop-menu" [class.mobile-open]="isMobileMenuOpen">
     <li><a href="#about" (click)="scrollToSection($event, 'about')" [class.active]="isActive('about')">Accueil</a></li>
     <li><a href="#skills" (click)="scrollToSection($event, 'skills')" [class.active]="isActive('skills')">Compétences</a></li>
     <li><a href="#projects" (click)="scrollToSection($event, 'projects')" [class.active]="isActive('projects')">Projets</a></li>

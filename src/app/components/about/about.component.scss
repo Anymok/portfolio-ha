@@ -15,11 +15,16 @@
             flex-direction: column-reverse;
             text-align: center;
             gap: 2rem;
+            padding: 1rem;
         }
     }
 
     .text-content {
         flex: 1;
+        
+        @media (max-width: 768px) {
+            order: 2;
+        }
     }
 
     .title {
@@ -36,7 +41,12 @@
         }
 
         @media (max-width: 768px) {
-            font-size: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 2rem;
         }
     }
 
@@ -44,6 +54,11 @@
         font-size: 1.5rem;
         color: #666;
         margin-bottom: 1.5rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
     }
 
     .description {
@@ -52,6 +67,12 @@
         color: #444;
         margin-bottom: 2rem;
         max-width: 600px;
+        
+        @media (max-width: 768px) {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
+        }
     }
 
     .skills {
@@ -62,6 +83,8 @@
 
         @media (max-width: 768px) {
             justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -77,6 +100,12 @@
             background: rgba(74, 107, 255, 0.2);
             transform: translateY(-2px);
         }
+        
+        @media (max-width: 768px) {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            border-radius: 15px;
+        }
     }
 
     .actions {
@@ -86,6 +115,9 @@
 
         @media (max-width: 768px) {
             justify-content: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -98,6 +130,7 @@
         gap: 0.5rem;
         transition: all 0.3s ease;
         text-decoration: none;
+        min-height: 44px; // Taille minimale pour le touch
 
         i {
             font-size: 0.9rem;
@@ -111,6 +144,13 @@
                 transform: translateY(-2px);
                 box-shadow: 0 4px 15px rgba(74, 107, 255, 0.4);
             }
+            
+            @media (max-width: 768px) {
+                justify-content: center;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
         }
 
         &.btn-secondary {
@@ -121,6 +161,13 @@
                 background: rgba(74, 107, 255, 0.2);
                 transform: translateY(-2px);
             }
+            
+            @media (max-width: 768px) {
+                justify-content: center;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
         }
     }
 
@@ -130,6 +177,7 @@
 
         @media (max-width: 768px) {
             justify-content: center;
+            gap: 0.75rem;
         }
     }
 
@@ -144,6 +192,7 @@
         color: #4a6bff;
         text-decoration: none;
         transition: all 0.3s ease;
+        min-height: 44px; // Taille minimale pour le touch
 
         &:hover {
             background: rgba(74, 107, 255, 0.2);
@@ -153,30 +202,37 @@
         i {
             font-size: 1.2rem;
         }
+        
+        @media (max-width: 768px) {
+            width: 44px;
+            height: 44px;
+        }
     }
 
     .illustration {
         flex: 1;
         max-width: 500px;
+        
+        @media (max-width: 768px) {
+            order: 1;
+            max-width: 300px;
+            margin-bottom: 1rem;
+        }
 
         .lottie-container {
             width: 100%;
             height: 400px;
             animation: float 6s ease-in-out infinite;
+            
+            @media (max-width: 768px) {
+                height: 250px;
+            }
         }
 
         img {
             width: 100%;
             height: auto;
             animation: float 6s ease-in-out infinite;
-        }
-
-        @media (max-width: 768px) {
-            max-width: 300px;
-            
-            .lottie-container {
-                height: 250px;
-            }
         }
     }
 }
@@ -190,5 +246,21 @@
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+// Optimisation des animations pour mobile
+@media (max-width: 768px) {
+    .about-container .illustration .lottie-container,
+    .about-container .illustration img {
+        animation-duration: 8s;
+    }
+}
+
+// Désactiver les animations si l'utilisateur préfère moins de mouvement
+@media (prefers-reduced-motion: reduce) {
+    .about-container .illustration .lottie-container,
+    .about-container .illustration img {
+        animation: none;
     }
 }

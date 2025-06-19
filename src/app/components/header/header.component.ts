@@ -28,6 +28,7 @@ import { trigger, transition, query, stagger, animate, style } from '@angular/an
 export class HeaderComponent implements OnInit, OnDestroy {
   
   activeSection: string = 'about';
+  isMobileMenuOpen: boolean = false;
   private scrollListener: any;
 
   ngOnInit() {
@@ -40,6 +41,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    // Empêcher le scroll du body quand le menu mobile est ouvert
+    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+  }
+
   scrollToSection(event: Event, sectionId: string): void {
     event.preventDefault();
     const element = document.getElementById(sectionId);
@@ -49,6 +56,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         block: 'start'
       });
       this.activeSection = sectionId;
+      // Fermer le menu mobile après navigation
+      if (this.isMobileMenuOpen) {
+        this.toggleMobileMenu();
+      }
     }
   }
 
