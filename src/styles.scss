@@ -311,3 +311,33 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
 }
 
+// ========================================
+// STYLES POUR LES SECTIONS DE NAVIGATION
+// ========================================
+// Styles spécifiques pour les sections avec IDs de navigation
+section[id] {
+  scroll-margin-top: 100px; // Espace pour le header fixe
+}
+
+// Amélioration du scroll fluide
+html {
+  scroll-behavior: smooth;
+}
+
+// Style pour les sections actives lors de la navigation
+section[id]:target {
+  animation: sectionActive 0.5s ease-out;
+}
+
+@keyframes sectionActive {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

@@ -35,13 +35,16 @@
     transition: all 0.2s ease-in-out;
     white-space: nowrap;
     background: transparent;
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     &.active {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.2);
     }
   }
 

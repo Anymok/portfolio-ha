@@ -1,8 +1,8 @@
 <nav class="custom-navbar" [@navAnimation]>
   <ul>
-    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
-    <li><a routerLink="/skills" routerLinkActive="active">Compétences</a></li>
-    <li><a routerLink="/projects" routerLinkActive="active">Projets</a></li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    <li><a href="#about" (click)="scrollToSection($event, 'about')" [class.active]="isActive('about')">Accueil</a></li>
+    <li><a href="#skills" (click)="scrollToSection($event, 'skills')" [class.active]="isActive('skills')">Compétences</a></li>
+    <li><a href="#projects" (click)="scrollToSection($event, 'projects')" [class.active]="isActive('projects')">Projets</a></li>
+    <li><a href="#contact" (click)="scrollToSection($event, 'contact')" [class.active]="isActive('contact')">Contact</a></li>
   </ul>
 </nav>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, transition, query, stagger, animate, style } from '@angular/animations';
 
 @Component({
@@ -25,6 +25,56 @@ import { trigger, transition, query, stagger, animate, style } from '@angular/an
     ])
   ]
 })
-export class HeaderComponent {
-  // Vous pouvez ajouter ici des propriétés ou des méthodes si nécessaire
+export class HeaderComponent implements OnInit, OnDestroy {
+  
+  activeSection: string = 'about';
+  private scrollListener: any;
+
+  ngOnInit() {
+    this.setupScrollListener();
+  }
+
+  ngOnDestroy() {
+    if (this.scrollListener) {
+      window.removeEventListener('scroll', this.scrollListener);
+    }
+  }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      this.activeSection = sectionId;
+    }
+  }
+
+  private setupScrollListener(): void {
+    this.scrollListener = () => {
+      const sections = ['about', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 150; // Offset pour le header
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            this.activeSection = sectionId;
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', this.scrollListener);
+  }
+
+  isActive(sectionId: string): boolean {
+    return this.activeSection === sectionId;
+  }
 }
