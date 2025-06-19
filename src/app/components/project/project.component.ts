@@ -19,38 +19,38 @@ export class ProjectComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: "Portfolio Personnel",
-      description: "Un portfolio moderne développé avec Angular pour présenter mes compétences et projets. Interface responsive avec animations fluides et design épuré.",
+      title: "Portfolio",
+      description: "Mon portfolio permet de présenter mes compétences et mes projets.",
       repository: "https://github.com/Anymok/portfolio-ha",
-      technologies: ["Angular", "TypeScript", "SCSS", "HTML5"]
+      technologies: ["Angular", "TypeScript", "Vercel"]
     },
     {
       id: 2,
-      title: "Application de Gestion de Tâches",
-      description: "Application web complète pour la gestion de tâches avec authentification, CRUD et interface intuitive. Développée avec Django et PostgreSQL.",
-      repository: "https://github.com/Anymok/task-manager",
-      technologies: ["Django", "Python", "PostgreSQL", "Bootstrap"]
+      title: "Ubeer",
+      description: "Ubeer est fortement inspiré de Uber Eats. C'est une application monolithique web de gestion de commandes pour les brasseries.",
+      repository: "https://github.com/orgs/ubeer-aw/repositories",
+      technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"]
     },
     {
       id: 3,
-      title: "API REST - Gestion d'Utilisateurs",
-      description: "API REST complète avec authentification JWT, gestion des utilisateurs et documentation Swagger. Déployée sur Google Cloud Platform.",
-      repository: "https://github.com/Anymok/user-management-api",
-      technologies: ["Django REST", "JWT", "GCP", "Docker"]
+      title: "Archi Flower",
+      description: "Archi Flower est une application micro-services avec Ionic (mobile et web) qui permet de commander des fleurs en ligne.",
+      repository: "https://gitlab.com/poc-archi-flower",
+      technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"]
     },
     {
       id: 4,
-      title: "Dashboard Analytics",
-      description: "Dashboard interactif pour visualiser des données avec graphiques dynamiques et filtres avancés. Intégration avec différentes sources de données.",
-      repository: "https://github.com/Anymok/analytics-dashboard",
-      technologies: ["React", "Node.js", "Chart.js", "MongoDB"]
+      title: "Pomodoro",
+      description: "Pomodoro est une application web qui permet de gérer sont temps avec un timer et un chronomètre.",
+      repository: "https://gitlab.com/pomodoro-ra",
+      technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"]
     },
     {
       id: 5,
-      title: "Application Mobile E-commerce",
-      description: "Application mobile cross-platform pour un site e-commerce avec panier, paiements et notifications push. Développée avec Ionic et Angular.",
-      repository: "https://github.com/Anymok/ecommerce-mobile",
-      technologies: ["Ionic", "Angular", "Firebase", "Stripe"]
-    }
+      title: "PayeTonKawa",
+      description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne.",
+      repository: "https://gitlab.com/payetonkawa-varea",
+      technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"]
+    },
   ];
 }
