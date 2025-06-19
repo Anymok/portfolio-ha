@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
+import { ScrollService } from '../../shared/services/scroll.service';
 import lottie from 'lottie-web';
 
 @Component({
@@ -38,9 +39,11 @@ import lottie from 'lottie-web';
     ])
   ]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
   @ViewChild('lottieContainer', { static: true }) lottieContainer!: ElementRef;
   private animation: any;
+
+  constructor(private scrollService: ScrollService) {}
 
   ngOnInit() {
     this.loadLottieAnimation();
@@ -54,6 +57,11 @@ export class AboutComponent implements OnInit {
       autoplay: true,
       path: '/about.json'
     });
+  }
+
+  scrollToSection(event: Event, sectionId: string) {
+    event.preventDefault();
+    this.scrollService.scrollToSection(sectionId);
   }
 
   ngOnDestroy() {

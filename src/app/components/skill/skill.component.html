@@ -1,26 +1,28 @@
-<section class="skill-container" id="skills">
+<section class="skill-container section-transition" id="skills">
     <div class="content">
-        <h1 class="title">
-            <span class="highlight">Compétences</span>
-        </h1>
-        <p class="description" style="animation-delay: 20s;">
-            J'ai catégorisé mes compétences en professionnelles et personnelles. Les compétences professionnelles sont celles que j'utilise en entreprise depuis 3 ans. Les compétences personnelles sont celles que j'utilise pour des projets personnels.
-        </p>
-        <div class="skill-type-selector">
-            <button 
-                [class.active]="selectedSkillType === 'professional'"
-                (click)="switchSkillType('professional')">
-                Professionnelles
-            </button>
-            <button 
-                [class.active]="selectedSkillType === 'personal'"
-                (click)="switchSkillType('personal')">
-                Personnelles
-            </button>
+        <div class="text-content fade-in-left">
+            <h1 class="title">
+                <span class="highlight">Compétences</span>
+            </h1>
+            <p class="description" style="animation-delay: 20s;">
+                J'ai catégorisé mes compétences en professionnelles et personnelles. Les compétences professionnelles sont celles que j'utilise en entreprise depuis 3 ans. Les compétences personnelles sont celles que j'utilise pour des projets personnels.
+            </p>
+            <div class="skill-type-selector">
+                <button 
+                    [class.active]="selectedSkillType === 'professional'"
+                    (click)="switchSkillType('professional')">
+                    Professionnelles
+                </button>
+                <button 
+                    [class.active]="selectedSkillType === 'personal'"
+                    (click)="switchSkillType('personal')">
+                    Personnelles
+                </button>
+            </div>
         </div>
-        <div class="skills-grid">
+        <div class="skills-grid fade-in-right">
             @for (skill of currentSkills; track skill.name) {
-                <div class="skill-card">
+                <div class="skill-card skill-item">
                     <img [src]="skill.icon" [alt]="skill.name">
                     <span>{{ skill.name }}</span>
                 </div>

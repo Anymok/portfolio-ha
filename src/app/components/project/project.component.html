@@ -1,13 +1,15 @@
-<section class="project-container" id="projects">
+<section class="project-container section-transition" id="projects">
     <div class="content">
-        <h1 class="title">
-            <span class="highlight">Projets</span>
-        </h1>
-        <p class="description">
-            Découvrez mes projets personnels développés avec passion et créativité. Chaque projet représente une étape de mon apprentissage et de mon évolution en tant que développeur.
-        </p>
+        <div class="text-content fade-in-left">
+            <h1 class="title">
+                <span class="highlight">Projets</span>
+            </h1>
+            <p class="description">
+                Découvrez mes projets personnels développés avec passion et créativité. Chaque projet représente une étape de mon apprentissage et de mon évolution en tant que développeur.
+            </p>
+        </div>
         
-        <div class="projects-grid">
+        <div class="projects-grid fade-in-right">
             @for (project of projects; track project.id) {
                 <div class="project-card">
                     <div class="project-content">

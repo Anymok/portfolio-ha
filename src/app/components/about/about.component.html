@@ -1,12 +1,12 @@
-<section class="about-container" id="about">
+<section class="about-container section-transition" id="about">
     <div class="content">
         <div class="text-content">
             <h1 class="title" [@fadeInUp]>
                 Développeur
                 <span class="highlight">Full Stack</span>
             </h1>
-            <h2 class="subtitle" [@fadeInUp] style="animation-delay: 2s;">DevOps</h2>
-            <p class="description" [@fadeInUp] style="animation-delay: 20s;">
+            <h2 class="subtitle fade-in-up" [@fadeInUp] style="animation-delay: 2s;">DevOps</h2>
+            <p class="description fade-in-up" [@fadeInUp] style="animation-delay: 4s;">
                 Je suis un développeur full stack passionné par la création d'expériences digitales qui sont fluides, scalables et modernes.
             </p>
 
@@ -18,12 +18,12 @@
                 <span class="skill-badge" [@skillBadgeAnimation]>Framework Scrum (Agilité)</span>
             </div>
 
-            <div class="actions" [@fadeInUp] style="animation-delay: 8s;">
-                <a href="#projects" class="btn btn-primary">
+            <div class="actions fade-in-up" [@fadeInUp] style="animation-delay: 8s;">
+                <a href="#projects" class="btn btn-primary" (click)="scrollToSection($event, 'projects')">
                     <span>Projets</span>
                     <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="#contact" class="btn btn-secondary">
+                <a href="#contact" class="btn btn-secondary" (click)="scrollToSection($event, 'contact')">
                     <span>Contact</span>
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -41,7 +41,7 @@
                 </a>
             </div>
         </div>
-        <div class="illustration" [@fadeInUp] style="animation-delay: 0.6s;">
+        <div class="illustration fade-in-right" [@fadeInUp] style="animation-delay: 0.6s;">
             <!-- Conteneur pour l'animation Lottie -->
             <div #lottieContainer class="lottie-container"></div>
         </div>
