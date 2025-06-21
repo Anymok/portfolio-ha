@@ -72,11 +72,14 @@ export class ProjectComponent {
       description: "Archi Flower est une application micro-services avec Ionic (mobile et web) qui permet de commander des fleurs en ligne.",
       repository: "https://gitlab.com/poc-archi-flower",
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
-      url: "",
-      disabled: true,
+      url: "https://archiflower-front.vercel.app/",
+      disabled: false,
       type: 'solo',
       features: [
-        ""
+        "Parcour du catalogue de fleurs",
+        "Commandez des fleurs",
+        "Historique de commandes",
+        "Mode sombre/clair",
       ],
       architecture: [
         "Application en Ionic",
@@ -111,8 +114,8 @@ export class ProjectComponent {
       description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne.",
       repository: "https://gitlab.com/payetonkawa-varea",
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
-      url: "",
-      disabled: true,
+      url: "https://payetonkawa-varea.vercel.app/",
+      disabled: false,
       type: 'team',
       features: [
         "",
@@ -120,6 +123,7 @@ export class ProjectComponent {
       architecture: [
         "Application en React",
         "Application monolithique avec Node.js",
+        "Connexion avec keycloak",
         "Base de données MySQL pour la persistance des données",
         "Déploiement sur Google Cloud Platform"
       ]
