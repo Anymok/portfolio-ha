@@ -8,6 +8,7 @@ interface Project {
   technologies: string[];
   url?: string;
   disabled?: boolean;
+  type: 'solo' | 'team';
 }
 
 @Component({
@@ -25,7 +26,8 @@ export class ProjectComponent {
       repository: "https://github.com/Anymok/portfolio-ha",
       technologies: ["Angular", "TypeScript", "Vercel"],
       url: "https://www.arthur-heude.dev/",
-      disabled: false
+      disabled: false,
+      type: 'solo'
     },
     {
       id: 2,
@@ -34,7 +36,8 @@ export class ProjectComponent {
       repository: "https://github.com/orgs/ubeer-aw/repositories",
       technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"],
       url: "https://ubeer-front.vercel.app/",
-      disabled: false
+      disabled: false,
+      type: 'solo'
     },
     {
       id: 3,
@@ -43,7 +46,8 @@ export class ProjectComponent {
       repository: "https://gitlab.com/poc-archi-flower",
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "",
-      disabled: true
+      disabled: true,
+      type: 'team'
     },
     {
       id: 4,
@@ -52,7 +56,8 @@ export class ProjectComponent {
       repository: "https://gitlab.com/pomodoro-ra",
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
-      disabled: false
+      disabled: false,
+      type: 'team'
     },
     {
       id: 5,
@@ -61,7 +66,8 @@ export class ProjectComponent {
       repository: "https://gitlab.com/payetonkawa-varea",
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "",
-      disabled: true
+      disabled: true,
+      type: 'team'
     },
   ];
 }

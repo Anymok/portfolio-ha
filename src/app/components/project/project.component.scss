@@ -78,6 +78,46 @@
         display: flex;
         flex-direction: column;
 
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 1.5rem 0 1.5rem;
+            
+            @media (max-width: 768px) {
+                padding: 1rem 1rem 0 1rem;
+            }
+        }
+
+        .project-type-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            
+            &.type-solo {
+                background: rgba(76, 175, 80, 0.2);
+                color: #4caf50;
+                border-color: rgba(76, 175, 80, 0.3);
+            }
+            
+            &.type-team {
+                background: rgba(255, 152, 0, 0.2);
+                color: #ff9800;
+                border-color: rgba(255, 152, 0, 0.3);
+            }
+            
+            @media (max-width: 768px) {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
+            }
+        }
+
         &:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
