@@ -241,8 +241,6 @@
                     font-size: 0.8rem;
                     font-weight: 600;
                     border: 1px solid rgba(255, 255, 255, 0.3);
-                    backdrop-filter: blur(5px);
-                    -webkit-backdrop-filter: blur(5px);
                     box-shadow: 0 0 10px rgba(74, 107, 255, 0.3);
                     
                     @media (max-width: 768px) {
@@ -362,16 +360,14 @@
 
 .modal-content {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     max-width: 800px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    animation: slideIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalAppear 0.3s ease-out;
 
     @media (max-width: 768px) {
         max-height: 95vh;
@@ -420,8 +416,6 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         align-self: flex-start;
         
@@ -589,8 +583,6 @@
         font-size: 0.85rem;
         font-weight: 600;
         border: 1px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
         box-shadow: 0 0 10px rgba(74, 107, 255, 0.3);
 
         @media (max-width: 768px) {
@@ -724,13 +716,13 @@
     }
 }
 
-@keyframes slideIn {
+@keyframes modalAppear {
     from {
+        transform: scale(0.95);
         opacity: 0;
-        transform: translateY(-50px) scale(0.9);
     }
     to {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0) scale(1);
     }
 }
