@@ -61,10 +61,10 @@
             <div class="modal-body">
                 <div class="modal-section">
                     <h3 class="section-title">
-                        <i class="fas fa-cogs"></i>
-                        Architecture
+                        <i class="fas fa-info"></i>
+                        Description
                     </h3>
-                    <p class="section-content">{{ selectedProject.architecture }}</p>
+                    <p class="section-content">{{ selectedProject.description }}</p>
                 </div>
 
                 <div class="modal-section">
@@ -84,14 +84,14 @@
 
                 <div class="modal-section">
                     <h3 class="section-title">
-                        <i class="fas fa-trophy"></i>
-                        Défis du projet
+                        <i class="fas fa-cogs"></i>
+                        Architecture
                     </h3>
                     <ul class="challenges-list">
-                        @for (challenge of selectedProject.challenges; track challenge) {
+                        @for (architecture of selectedProject.architecture; track architecture) {
                             <li class="challenge-item">
                                 <i class="fas fa-lightbulb"></i>
-                                {{ challenge }}
+                                {{ architecture }} 
                             </li>
                         }
                     </ul>

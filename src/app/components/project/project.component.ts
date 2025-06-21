@@ -9,9 +9,8 @@ interface Project {
   url?: string;
   disabled?: boolean;
   type: 'solo' | 'team';
-  architecture?: string;
   features?: string[];
-  challenges?: string[];
+  architecture?: string[];
 }
 
 @Component({
@@ -34,19 +33,15 @@ export class ProjectComponent {
       url: "https://www.arthur-heude.dev/",
       disabled: false,
       type: 'solo',
-      architecture: "Application Angular standalone avec architecture modulaire. Utilisation de services pour la gestion des animations et des interactions.",
       features: [
-        "Design responsive avec animations fluides",
-        "Sections interactives (Accueil, Projets, Compétences, Contact)",
-        "Effet de typing animé sur la page d'accueil",
-        "Cartes de projets avec technologies et liens",
-        "Formulaire de contact fonctionnel"
-      ],
-      challenges: [
         "Optimisation des performances avec lazy loading",
         "Création d'animations fluides et performantes",
         "Design moderne avec glassmorphism",
         "Responsive design pour tous les appareils"
+      ],
+      architecture: [
+        "Application en Angular",
+        "Déploiement sur Vercel",
       ]
     },
     {
@@ -58,20 +53,17 @@ export class ProjectComponent {
       url: "https://ubeer-front.vercel.app/",
       disabled: false,
       type: 'solo',
-      architecture: "Architecture monolithique avec frontend React et backend Spring Boot. Base de données MySQL pour la persistance des données.",
       features: [
-        "Système d'authentification utilisateur",
-        "Catalogue de produits avec filtres",
-        "Panier d'achat avec gestion des quantités",
-        "Système de commandes en temps réel",
+        "Système d'authentification utilisateur (Auth0)",
+        "Catalogue de produits avec filtres de recherche",
         "Interface d'administration pour les brasseries",
-        "Gestion des paiements"
       ],
-      challenges: [
-        "Gestion de la concurrence pour les commandes",
-        "Optimisation des performances de la base de données",
-        "Sécurisation des paiements",
-        "Interface utilisateur intuitive et responsive"
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Spring Boot",
+        "Connection avec auth0",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Vercel"
       ]
     },
     {
@@ -82,45 +74,35 @@ export class ProjectComponent {
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "",
       disabled: true,
-      type: 'team',
-      architecture: "Architecture micro-services avec API Gateway. Frontend Ionic pour mobile et web. Services séparés pour la gestion des commandes, utilisateurs et produits.",
+      type: 'solo',
       features: [
-        "Application mobile et web avec Ionic",
-        "Système de micro-services",
-        "API Gateway pour la gestion des requêtes",
-        "Base de données distribuée",
-        "Pipeline CI/CD avec GitLab"
+        ""
       ],
-      challenges: [
-        "Coordination entre les micro-services",
-        "Gestion de la cohérence des données",
-        "Déploiement et orchestration des services",
-        "Performance avec l'architecture distribuée"
+      architecture: [
+        "Application en Ionic",
+        "Application micro-services avec Spring Boot",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Vercel"
       ]
     },
     {
       id: 4,
       title: "Pomodoro",
-      description: "Pomodoro est une application web qui permet de gérer sont temps avec un timer et un chronomètre.",
+      description: "Pomodoro est une application web qui permet de gérer son temps avec un chronomètre. Il est possible de personnaliser le chronomètre et de voir l'historique des dernières sessions.",
       repository: "https://gitlab.com/pomodoro-ra",
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
       type: 'team',
-      architecture: "Application web React avec backend Spring Boot. Base de données MySQL pour sauvegarder les sessions de travail.",
       features: [
-        "Timer Pomodoro personnalisable (25/5/15 minutes)",
-        "Chronomètre pour le suivi du temps",
-        "Historique des sessions de travail",
-        "Statistiques de productivité",
-        "Notifications sonores et visuelles",
-        "Mode sombre/clair"
+        "Chronomètre personnalisable",
+        "Historique des sessions",
       ],
-      challenges: [
-        "Précision du timer en JavaScript",
-        "Gestion des notifications navigateur",
-        "Interface utilisateur intuitive",
-        "Sauvegarde des données utilisateur"
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Spring Boot",
+        "Base de données MySQL pour l'historisation",
+        "Déploiement sur Vercel"
       ]
     },
     {
@@ -132,20 +114,14 @@ export class ProjectComponent {
       url: "",
       disabled: true,
       type: 'team',
-      architecture: "Stack MERN (MongoDB, Express, React, Node.js) avec déploiement sur Google Cloud Platform. Interface moderne avec Tailwind CSS.",
       features: [
-        "Catalogue de cafés avec filtres",
-        "Système de panier et commandes",
-        "Authentification utilisateur",
-        "Gestion des stocks en temps réel",
-        "Interface d'administration",
-        "Paiements sécurisés"
+        "",
       ],
-      challenges: [
-        "Intégration avec Google Cloud Platform",
-        "Gestion des stocks en temps réel",
-        "Optimisation des performances",
-        "Sécurisation des données sensibles"
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Node.js",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Google Cloud Platform"
       ]
     },
   ];
