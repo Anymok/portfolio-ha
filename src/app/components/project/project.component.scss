@@ -274,6 +274,13 @@
                             display: none; // Masquer les tooltips sur mobile
                         }
                     }
+
+                    &.no-tooltip {
+                        &:hover::after,
+                        &:hover::before {
+                            display: none;
+                        }
+                    }
                 }
 
                 .btn {

@@ -24,7 +24,7 @@ export class ProjectComponent {
       description: "Mon portfolio permet de présenter mes compétences et mes projets.",
       repository: "https://github.com/Anymok/portfolio-ha",
       technologies: ["Angular", "TypeScript", "Vercel"],
-      url: "https://anymok.github.io/portfolio-ha/",
+      url: "https://www.arthur-heude.dev/",
       disabled: false
     },
     {
