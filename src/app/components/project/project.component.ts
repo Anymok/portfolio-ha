@@ -114,7 +114,7 @@ export class ProjectComponent {
       description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne.",
       repository: "https://gitlab.com/payetonkawa-varea",
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
-      url: "https://payetonkawa-varea.vercel.app/",
+      url: "https://payetonkawa-front.vercel.app/",
       disabled: false,
       type: 'team',
       features: [
