@@ -28,32 +28,12 @@
                         </div>
                         
                         <div class="project-actions">
-                            <a 
-                                [href]="project.repository" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                class="btn btn-primary">
-                                <i class="fab fa-github"></i>
-                                <span>Repository</span>
-                            </a>
-                            <div class="tooltip-container" *ngIf="project.disabled">
-                                <a 
-                                    href="#" 
-                                    class="btn btn-secondary disabled">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                            <div class="tooltip-container no-tooltip" *ngIf="!project.disabled">
-                                <a 
-                                    [href]="project.url" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    class="btn btn-secondary">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
+                            <button 
+                                (click)="openModal(project)"
+                                class="btn btn-info">
+                                <i class="fas fa-info-circle"></i>
+                                <span>En savoir plus</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -61,3 +41,105 @@
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+@if (isModalOpen && selectedProject) {
+    <div class="modal-overlay" (click)="onModalClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <h2 class="modal-title">{{ selectedProject.title }}</h2>
+                    <div class="modal-type-badge" [class]="'type-' + selectedProject.type">
+                        {{ selectedProject.type === 'solo' ? 'Solo' : 'Team' }}
+                    </div>
+                </div>
+                <button class="modal-close" (click)="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-info"></i>
+                        Description
+                    </h3>
+                    <p class="section-content">{{ selectedProject.description }}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Fonctionnalités
+                    </h3>
+                    <ul class="features-list">
+                        @for (feature of selectedProject.features; track feature) {
+                            <li class="feature-item">
+                                <i class="fas fa-check"></i>
+                                {{ feature }}
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        Architecture
+                    </h3>
+                    <ul class="challenges-list">
+                        @for (architecture of selectedProject.architecture; track architecture) {
+                            <li class="challenge-item">
+                                <i class="fas fa-lightbulb"></i>
+                                {{ architecture }} 
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Technologies utilisées
+                    </h3>
+                    <div class="modal-tech">
+                        @for (tech of selectedProject.technologies; track tech) {
+                            <span class="tech-badge">{{ tech }}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a 
+                    [href]="selectedProject.repository" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <i class="fab fa-github"></i>
+                    <span>Repository</span>
+                </a>
+                @if (!selectedProject.disabled && selectedProject.url) {
+                    <a 
+                        [href]="selectedProject.url" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Demo</span>
+                    </a>
+                }
+                @if (selectedProject.disabled || !selectedProject.url) {
+                    <div class="tooltip-container">
+                        <a 
+                            href="#" 
+                            class="btn btn-secondary disabled">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Demo</span>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
