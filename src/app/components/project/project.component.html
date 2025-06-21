@@ -31,7 +31,7 @@
                                 <i class="fab fa-github"></i>
                                 <span>Repository</span>
                             </a>
-                            <div class="tooltip-container" *ngIf="!project.demo">
+                            <div class="tooltip-container" *ngIf="project.disabled">
                                 <a 
                                     href="#" 
                                     class="btn btn-secondary disabled">
@@ -40,8 +40,8 @@
                                 </a>
                             </div>
                             <a 
-                                *ngIf="project.demo"
-                                [href]="project.demo" 
+                                *ngIf="!project.disabled"
+                                [href]="project.url" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 class="btn btn-secondary">
