@@ -9,6 +9,9 @@ interface Project {
   url?: string;
   disabled?: boolean;
   type: 'solo' | 'team';
+  architecture?: string;
+  features?: string[];
+  challenges?: string[];
 }
 
 @Component({
@@ -18,6 +21,9 @@ interface Project {
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent {
+  selectedProject: Project | null = null;
+  isModalOpen = false;
+
   projects: Project[] = [
     {
       id: 1,
@@ -27,7 +33,21 @@ export class ProjectComponent {
       technologies: ["Angular", "TypeScript", "Vercel"],
       url: "https://www.arthur-heude.dev/",
       disabled: false,
-      type: 'solo'
+      type: 'solo',
+      architecture: "Application Angular standalone avec architecture modulaire. Utilisation de services pour la gestion des animations et des interactions.",
+      features: [
+        "Design responsive avec animations fluides",
+        "Sections interactives (Accueil, Projets, Compétences, Contact)",
+        "Effet de typing animé sur la page d'accueil",
+        "Cartes de projets avec technologies et liens",
+        "Formulaire de contact fonctionnel"
+      ],
+      challenges: [
+        "Optimisation des performances avec lazy loading",
+        "Création d'animations fluides et performantes",
+        "Design moderne avec glassmorphism",
+        "Responsive design pour tous les appareils"
+      ]
     },
     {
       id: 2,
@@ -37,7 +57,22 @@ export class ProjectComponent {
       technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"],
       url: "https://ubeer-front.vercel.app/",
       disabled: false,
-      type: 'solo'
+      type: 'solo',
+      architecture: "Architecture monolithique avec frontend React et backend Spring Boot. Base de données MySQL pour la persistance des données.",
+      features: [
+        "Système d'authentification utilisateur",
+        "Catalogue de produits avec filtres",
+        "Panier d'achat avec gestion des quantités",
+        "Système de commandes en temps réel",
+        "Interface d'administration pour les brasseries",
+        "Gestion des paiements"
+      ],
+      challenges: [
+        "Gestion de la concurrence pour les commandes",
+        "Optimisation des performances de la base de données",
+        "Sécurisation des paiements",
+        "Interface utilisateur intuitive et responsive"
+      ]
     },
     {
       id: 3,
@@ -47,7 +82,21 @@ export class ProjectComponent {
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "",
       disabled: true,
-      type: 'team'
+      type: 'team',
+      architecture: "Architecture micro-services avec API Gateway. Frontend Ionic pour mobile et web. Services séparés pour la gestion des commandes, utilisateurs et produits.",
+      features: [
+        "Application mobile et web avec Ionic",
+        "Système de micro-services",
+        "API Gateway pour la gestion des requêtes",
+        "Base de données distribuée",
+        "Pipeline CI/CD avec GitLab"
+      ],
+      challenges: [
+        "Coordination entre les micro-services",
+        "Gestion de la cohérence des données",
+        "Déploiement et orchestration des services",
+        "Performance avec l'architecture distribuée"
+      ]
     },
     {
       id: 4,
@@ -57,7 +106,22 @@ export class ProjectComponent {
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
-      type: 'team'
+      type: 'team',
+      architecture: "Application web React avec backend Spring Boot. Base de données MySQL pour sauvegarder les sessions de travail.",
+      features: [
+        "Timer Pomodoro personnalisable (25/5/15 minutes)",
+        "Chronomètre pour le suivi du temps",
+        "Historique des sessions de travail",
+        "Statistiques de productivité",
+        "Notifications sonores et visuelles",
+        "Mode sombre/clair"
+      ],
+      challenges: [
+        "Précision du timer en JavaScript",
+        "Gestion des notifications navigateur",
+        "Interface utilisateur intuitive",
+        "Sauvegarde des données utilisateur"
+      ]
     },
     {
       id: 5,
@@ -67,7 +131,40 @@ export class ProjectComponent {
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "",
       disabled: true,
-      type: 'team'
+      type: 'team',
+      architecture: "Stack MERN (MongoDB, Express, React, Node.js) avec déploiement sur Google Cloud Platform. Interface moderne avec Tailwind CSS.",
+      features: [
+        "Catalogue de cafés avec filtres",
+        "Système de panier et commandes",
+        "Authentification utilisateur",
+        "Gestion des stocks en temps réel",
+        "Interface d'administration",
+        "Paiements sécurisés"
+      ],
+      challenges: [
+        "Intégration avec Google Cloud Platform",
+        "Gestion des stocks en temps réel",
+        "Optimisation des performances",
+        "Sécurisation des données sensibles"
+      ]
     },
   ];
+
+  openModal(project: Project): void {
+    this.selectedProject = project;
+    this.isModalOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.selectedProject = null;
+    document.body.style.overflow = 'auto';
+  }
+
+  onModalClick(event: Event): void {
+    if (event.target === event.currentTarget) {
+      this.closeModal();
+    }
+  }
 }
