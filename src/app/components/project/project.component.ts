@@ -9,6 +9,8 @@ interface Project {
   url?: string;
   disabled?: boolean;
   type: 'solo' | 'team';
+  features?: string[];
+  architecture?: string[];
 }
 
 @Component({
@@ -18,6 +20,9 @@ interface Project {
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent {
+  selectedProject: Project | null = null;
+  isModalOpen = false;
+
   projects: Project[] = [
     {
       id: 1,
@@ -27,7 +32,17 @@ export class ProjectComponent {
       technologies: ["Angular", "TypeScript", "Vercel"],
       url: "https://www.arthur-heude.dev/",
       disabled: false,
-      type: 'solo'
+      type: 'solo',
+      features: [
+        "Optimisation des performances avec lazy loading",
+        "Création d'animations fluides et performantes",
+        "Design moderne avec glassmorphism",
+        "Responsive design pour tous les appareils"
+      ],
+      architecture: [
+        "Application en Angular",
+        "Déploiement sur Vercel",
+      ]
     },
     {
       id: 2,
@@ -37,7 +52,19 @@ export class ProjectComponent {
       technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"],
       url: "https://ubeer-front.vercel.app/",
       disabled: false,
-      type: 'solo'
+      type: 'solo',
+      features: [
+        "Système d'authentification utilisateur (Auth0)",
+        "Catalogue de produits avec filtres de recherche",
+        "Interface d'administration pour les brasseries",
+      ],
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Spring Boot",
+        "Connection avec auth0",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Vercel"
+      ]
     },
     {
       id: 3,
@@ -47,17 +74,36 @@ export class ProjectComponent {
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "",
       disabled: true,
-      type: 'team'
+      type: 'solo',
+      features: [
+        ""
+      ],
+      architecture: [
+        "Application en Ionic",
+        "Application micro-services avec Spring Boot",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Vercel"
+      ]
     },
     {
       id: 4,
       title: "Pomodoro",
-      description: "Pomodoro est une application web qui permet de gérer sont temps avec un timer et un chronomètre.",
+      description: "Pomodoro est une application web qui permet de gérer son temps avec un chronomètre. Il est possible de personnaliser le chronomètre et de voir l'historique des dernières sessions.",
       repository: "https://gitlab.com/pomodoro-ra",
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
-      type: 'team'
+      type: 'team',
+      features: [
+        "Chronomètre personnalisable",
+        "Historique des sessions",
+      ],
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Spring Boot",
+        "Base de données MySQL pour l'historisation",
+        "Déploiement sur Vercel"
+      ]
     },
     {
       id: 5,
@@ -67,7 +113,34 @@ export class ProjectComponent {
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "",
       disabled: true,
-      type: 'team'
+      type: 'team',
+      features: [
+        "",
+      ],
+      architecture: [
+        "Application en React",
+        "Application monolithique avec Node.js",
+        "Base de données MySQL pour la persistance des données",
+        "Déploiement sur Google Cloud Platform"
+      ]
     },
   ];
+
+  openModal(project: Project): void {
+    this.selectedProject = project;
+    this.isModalOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.selectedProject = null;
+    document.body.style.overflow = 'auto';
+  }
+
+  onModalClick(event: Event): void {
+    if (event.target === event.currentTarget) {
+      this.closeModal();
+    }
+  }
 }
