@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { LanguageService } from '../../shared/services/language.service';
 import lottie from 'lottie-web';
 
 @Component({
@@ -11,11 +12,17 @@ export class ContactComponent implements OnInit, OnDestroy {
   @ViewChild('lottieContainer', { static: true }) lottieContainer!: ElementRef;
   private animation: any;
 
+  constructor(private languageService: LanguageService) {}
+
   ngOnInit() {
     // Attendre que le DOM soit prêt
     setTimeout(() => {
       this.loadLottieAnimation();
     }, 100);
+  }
+
+  getTranslation(key: string): string {
+    return this.languageService.translate(key);
   }
 
   private loadLottieAnimation() {

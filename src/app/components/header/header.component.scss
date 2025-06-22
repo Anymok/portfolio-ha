@@ -69,6 +69,15 @@
     }
   }
 
+  // Conteneur du bouton de langue
+  .language-toggle-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+
   .desktop-menu {
     display: flex;
     background: rgba(44, 44, 44, 0.5);
@@ -138,6 +147,13 @@
       display: block;
     }
 
+    .language-toggle-container {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1003;
+    }
+
     .desktop-menu {
       position: fixed;
       top: 0;
@@ -198,19 +214,10 @@
 @media (max-width: 480px) {
   .custom-navbar {
     top: 0.5rem;
-    width: 98%;
-
-    .mobile-menu-toggle {
-      span {
-        width: 20px;
-        height: 2px;
-      }
-    }
-
-    .mobile-logo span {
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
+    
+    .language-toggle-container {
+      top: 0.5rem;
+      right: 0.5rem;
     }
   }
 }

@@ -2,10 +2,10 @@
     <div class="content">
         <div class="text-content fade-in-left">
             <h1 class="title">
-                <span class="highlight">Projets</span>
+                <span class="highlight">{{ getTranslation('projects.title') }}</span>
             </h1>
             <p class="description">
-                Découvrez mes projets personnels, développés seul ou en équipe. Chaque projet représente une montée en compétences sur différentes technologies.
+                {{ getTranslation('projects.description') }}
             </p>
         </div>
         
@@ -15,7 +15,7 @@
                     <div class="project-header">
                         <h3 class="project-title">{{ project.title }}</h3>
                         <div class="project-type-badge" [class]="'type-' + project.type">
-                            {{ project.type === 'solo' ? 'Solo' : 'Team' }}
+                            {{ project.type === 'solo' ? getTranslation('projects.solo') : getTranslation('projects.team') }}
                         </div>
                     </div>
                     <div class="project-content">
@@ -32,7 +32,7 @@
                                 (click)="openModal(project)"
                                 class="btn btn-info">
                                 <i class="fas fa-info-circle"></i>
-                                <span>En savoir plus</span>
+                                <span>{{ getTranslation('projects.learnMore') }}</span>
                             </button>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="modal-title-section">
                     <h2 class="modal-title">{{ selectedProject.title }}</h2>
                     <div class="modal-type-badge" [class]="'type-' + selectedProject.type">
-                        {{ selectedProject.type === 'solo' ? 'Solo' : 'Team' }}
+                        {{ selectedProject.type === 'solo' ? getTranslation('projects.solo') : getTranslation('projects.team') }}
                     </div>
                 </div>
                 <button class="modal-close" (click)="closeModal()">
@@ -62,7 +62,7 @@
                 <div class="modal-section">
                     <h3 class="section-title">
                         <i class="fas fa-info"></i>
-                        Description
+                        {{ getTranslation('projects.projectDescription') }}
                     </h3>
                     <p class="section-content">{{ selectedProject.description }}</p>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="modal-section">
                     <h3 class="section-title">
                         <i class="fas fa-star"></i>
-                        Fonctionnalités
+                        {{ getTranslation('projects.features') }}
                     </h3>
                     <ul class="features-list">
                         @for (feature of selectedProject.features; track feature) {
@@ -85,7 +85,7 @@
                 <div class="modal-section">
                     <h3 class="section-title">
                         <i class="fas fa-cogs"></i>
-                        Architecture
+                        {{ getTranslation('projects.architecture') }}
                     </h3>
                     <ul class="challenges-list">
                         @for (architecture of selectedProject.architecture; track architecture) {
@@ -100,7 +100,7 @@
                 <div class="modal-section">
                     <h3 class="section-title">
                         <i class="fas fa-code"></i>
-                        Technologies utilisées
+                        {{ getTranslation('projects.technologies') }}
                     </h3>
                     <div class="modal-tech">
                         @for (tech of selectedProject.technologies; track tech) {
@@ -117,7 +117,7 @@
                     rel="noopener noreferrer"
                     class="btn btn-primary">
                     <i class="fab fa-github"></i>
-                    <span>Repository</span>
+                    <span>{{ getTranslation('projects.repository') }}</span>
                 </a>
                 @if (!selectedProject.disabled && selectedProject.url) {
                     <a 
@@ -126,7 +126,7 @@
                         rel="noopener noreferrer"
                         class="btn btn-secondary">
                         <i class="fas fa-external-link-alt"></i>
-                        <span>Demo</span>
+                        <span>{{ getTranslation('projects.demo') }}</span>
                     </a>
                 }
                 @if (selectedProject.disabled || !selectedProject.url) {
@@ -135,7 +135,7 @@
                             href="#" 
                             class="btn btn-secondary disabled">
                             <i class="fas fa-external-link-alt"></i>
-                            <span>Demo</span>
+                            <span>{{ getTranslation('projects.demo') }}</span>
                         </a>
                     </div>
                 }

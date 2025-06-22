@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, transition, query, stagger, animate, style } from '@angular/animations';
+import { LanguageService } from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -31,6 +32,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isMobileMenuOpen: boolean = false;
   private scrollListener: any;
 
+  constructor(private languageService: LanguageService) {}
+
   ngOnInit() {
     this.setupScrollListener();
   }
@@ -39,6 +42,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (this.scrollListener) {
       window.removeEventListener('scroll', this.scrollListener);
     }
+  }
+
+  getTranslation(key: string): string {
+    return this.languageService.translate(key);
   }
 
   toggleMobileMenu(): void {

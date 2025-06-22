@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../shared/services/language.service';
 
 @Component({
   selector: 'app-skill',
@@ -35,6 +36,12 @@ export class SkillComponent {
     { name: 'GitLab CI/CD', icon: '/icons/gitlab.png' },
     { name: 'Docker', icon: '/icons/docker.webp' },
   ];
+
+  constructor(private languageService: LanguageService) {}
+
+  getTranslation(key: string): string {
+    return this.languageService.translate(key);
+  }
 
   switchSkillType(type: 'professional' | 'personal') {
     this.selectedSkillType = type;

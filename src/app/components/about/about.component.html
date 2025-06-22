@@ -2,12 +2,12 @@
     <div class="content">
         <div class="text-content">
             <h1 class="title" [@fadeInUp]>
-                Développeur
-                <span class="highlight">Full Stack</span>
+                {{ getTranslation('about.subtitle') }}
+                <span class="highlight">{{ getTranslation('about.subsubtitle') }}</span>
             </h1>
             <h2 class="subtitle fade-in-up" [@fadeInUp] style="animation-delay: 2s;"></h2>
             <p class="description fade-in-up" [@fadeInUp] style="animation-delay: 4s;">
-                Je suis un développeur full stack passionné par la création d'expériences digitales qui sont fluides, scalables et modernes.
+                {{ getTranslation('about.description') }}
             </p>
 
             <div class="skills" [@staggerAnimation]>
@@ -15,16 +15,16 @@
                 <span class="skill-badge" [@skillBadgeAnimation]>Django/Python</span>
                 <span class="skill-badge" [@skillBadgeAnimation]>Google Cloud Platform</span>
                 <span class="skill-badge" [@skillBadgeAnimation]>PostgreSQL</span>
-                <span class="skill-badge" [@skillBadgeAnimation]>Framework Scrum (Agilité)</span>
+                <span class="skill-badge" [@skillBadgeAnimation]>Framework Scrum (Agile)</span>
             </div>
 
             <div class="actions fade-in-up" [@fadeInUp] style="animation-delay: 8s;">
                 <a href="#projects" class="btn btn-primary" (click)="scrollToSection($event, 'projects')">
-                    <span>Projets</span>
+                    <span>{{ getTranslation('header.projects') }}</span>
                     <i class="fas fa-external-link-alt"></i>
                 </a>
                 <a href="#contact" class="btn btn-secondary" (click)="scrollToSection($event, 'contact')">
-                    <span>Contact</span>
+                    <span>{{ getTranslation('header.contact') }}</span>
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>

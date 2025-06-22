@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
 import { ScrollService } from '../../shared/services/scroll.service';
+import { LanguageService } from '../../shared/services/language.service';
 import lottie from 'lottie-web';
 
 @Component({
@@ -43,10 +44,17 @@ export class AboutComponent implements OnInit, OnDestroy {
   @ViewChild('lottieContainer', { static: true }) lottieContainer!: ElementRef;
   private animation: any;
 
-  constructor(private scrollService: ScrollService) {}
+  constructor(
+    private scrollService: ScrollService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit() {
     this.loadLottieAnimation();
+  }
+
+  getTranslation(key: string): string {
+    return this.languageService.translate(key);
   }
 
   private loadLottieAnimation() {

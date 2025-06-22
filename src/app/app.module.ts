@@ -6,7 +6,9 @@ import { ProjectComponent } from "./components/project/project.component";
 import { SkillComponent } from "./components/skill/skill.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { LanguageToggleComponent } from "./components/language-toggle/language-toggle.component";
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import { CommonModule } from '@angular/common';
     SkillComponent,
     ContactComponent,
     FooterComponent,
+    LanguageToggleComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     AboutComponent,
@@ -27,6 +31,7 @@ import { CommonModule } from '@angular/common';
     SkillComponent,
     ContactComponent,
     FooterComponent,
+    LanguageToggleComponent,
   ]
 })
 export class AppModule { }

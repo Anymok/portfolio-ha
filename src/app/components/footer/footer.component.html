@@ -2,21 +2,21 @@
     <div class="footer-content">
         <div class="footer-section">
             <h3>Arthur HEUDE</h3>
-            <p>Développeur Full Stack passionné par la création d'expériences digitales modernes</p>
+            <p>{{ getTranslation('about.description') }}</p>
         </div>
         
         <div class="footer-section">
-            <h4>Navigation</h4>
+            <h4>{{ getTranslation('footer.navigation') }}</h4>
             <ul>
-                <li><a href="#about" (click)="scrollToSection($event, 'about')">Accueil</a></li>
-                <li><a href="#skills" (click)="scrollToSection($event, 'skills')">Compétences</a></li>
-                <li><a href="#projects" (click)="scrollToSection($event, 'projects')">Projets</a></li>
-                <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact</a></li>
+                <li><a href="#about" (click)="scrollToSection($event, 'about')">{{ getTranslation('header.home') }}</a></li>
+                <li><a href="#skills" (click)="scrollToSection($event, 'skills')">{{ getTranslation('header.skills') }}</a></li>
+                <li><a href="#projects" (click)="scrollToSection($event, 'projects')">{{ getTranslation('header.projects') }}</a></li>
+                <li><a href="#contact" (click)="scrollToSection($event, 'contact')">{{ getTranslation('header.contact') }}</a></li>
             </ul>
         </div>
         
         <div class="footer-section">
-            <h4>Contact / Réseaux sociaux</h4>
+            <h4>{{ getTranslation('footer.social') }}</h4>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/arthur-heude/" target="_blank" rel="noopener noreferrer" class="social-link">
                     <i class="fab fa-linkedin-in"></i>
@@ -26,6 +26,6 @@
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; 2025 Arthur H. Tous droits réservés.</p>
+        <p>&copy; 2025 Arthur H. {{ getTranslation('footer.rights') }}</p>
     </div>
 </footer>

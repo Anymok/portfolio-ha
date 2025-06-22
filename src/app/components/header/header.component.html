@@ -13,9 +13,14 @@
 
   <!-- Menu desktop -->
   <ul class="desktop-menu" [class.mobile-open]="isMobileMenuOpen">
-    <li><a href="#about" (click)="scrollToSection($event, 'about')" [class.active]="isActive('about')">Accueil</a></li>
-    <li><a href="#skills" (click)="scrollToSection($event, 'skills')" [class.active]="isActive('skills')">Compétences</a></li>
-    <li><a href="#projects" (click)="scrollToSection($event, 'projects')" [class.active]="isActive('projects')">Projets</a></li>
-    <li><a href="#contact" (click)="scrollToSection($event, 'contact')" [class.active]="isActive('contact')">Contact</a></li>
+    <li><a href="#about" (click)="scrollToSection($event, 'about')" [class.active]="isActive('about')">{{ getTranslation('header.home') }}</a></li>
+    <li><a href="#skills" (click)="scrollToSection($event, 'skills')" [class.active]="isActive('skills')">{{ getTranslation('header.skills') }}</a></li>
+    <li><a href="#projects" (click)="scrollToSection($event, 'projects')" [class.active]="isActive('projects')">{{ getTranslation('header.projects') }}</a></li>
+    <li><a href="#contact" (click)="scrollToSection($event, 'contact')" [class.active]="isActive('contact')">{{ getTranslation('header.contact') }}</a></li>
   </ul>
+
+  <!-- Bouton de changement de langue -->
+  <div class="language-toggle-container">
+    <app-language-toggle></app-language-toggle>
+  </div>
 </nav>

@@ -1,0 +1,36 @@
+{
+  "header": {
+    "home": "Accueil",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Développeur passionné par la création d'applications web modernes et performantes.",
+    "downloadCV": "Télécharger CV"
+  },
+  "skills": {
+    "title": "Compétences",
+    "description": "Mes compétences techniques et outils de développement"
+  },
+  "projects": {
+    "title": "Projets",
+    "description": "Découvrez mes réalisations et projets personnels"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "N'hésitez pas à me contacter pour discuter de vos projets",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  },
+  "language": {
+    "french": "Français",
+    "english": "English"
+  }
+} 

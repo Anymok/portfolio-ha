@@ -2,21 +2,21 @@
     <div class="content">
         <div class="text-content fade-in-left">
             <h1 class="title">
-                <span class="highlight">Compétences</span>
+                <span class="highlight">{{ getTranslation('skills.title') }}</span>
             </h1>
             <p class="description" style="animation-delay: 20s;">
-                J'ai classé mes compétences en deux catégories : professionnelles et personnelles. Les compétences professionnelles correspondent à celles que j'utilise en entreprise depuis 3 ans, tandis que les compétences personnelles concernent les projets personnels que je réalise. 
+                {{ getTranslation('skills.description') }}
             </p>
             <div class="skill-type-selector">
                 <button 
                     [class.active]="selectedSkillType === 'professional'"
                     (click)="switchSkillType('professional')">
-                    Professionnelles
+                    {{ getTranslation('skills.professional') }}
                 </button>
                 <button 
                     [class.active]="selectedSkillType === 'personal'"
                     (click)="switchSkillType('personal')">
-                    Personnelles
+                    {{ getTranslation('skills.personal') }}
                 </button>
             </div>
         </div>

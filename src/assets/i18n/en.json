@@ -1,0 +1,36 @@
+{
+  "header": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About",
+    "description": "Passionate developer creating modern and performant web applications.",
+    "downloadCV": "Download CV"
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "My technical skills and development tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Discover my achievements and personal projects"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Don't hesitate to contact me to discuss your projects",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "french": "Français",
+    "english": "English"
+  }
+} 
