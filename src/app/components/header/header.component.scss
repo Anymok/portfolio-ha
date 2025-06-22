@@ -46,7 +46,7 @@
 
   // Logo mobile
   .mobile-logo {
-    display: none;
+    dbplay: none;
     position: absolute;
     right: 0;
     top: 50%;
@@ -138,6 +138,7 @@
     width: 95%;
     justify-content: space-between;
     padding: 0 1rem;
+    margin-top: 1rem;
 
     .mobile-menu-toggle {
       display: flex;
@@ -156,8 +157,8 @@
 
     .desktop-menu {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: -25px;
+      left: -10px;
       width: 100vw;
       height: 100vh;
       background: rgba(0, 0, 0, 0.95);
