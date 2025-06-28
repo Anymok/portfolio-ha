@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../shared/services/language.service';
 
+interface Repository {
+  url: string;
+  title: string;
+}
+
 interface Project {
   id: number;
   title: string;
   description: string;
-  repository: string;
+  repositories: Repository[];
   technologies: string[];
   url?: string;
   disabled?: boolean;
@@ -30,7 +35,12 @@ export class ProjectComponent {
       id: 1,
       title: "Portfolio",
       description: "Mon portfolio permet de présenter mes compétences et mes projets.",
-      repository: "https://github.com/Anymok/portfolio-ha",
+      repositories: [
+        {
+          url: "https://github.com/Anymok/portfolio-ha",
+          title: "GitHub"
+        }
+      ],
       technologies: ["Angular", "TypeScript", "Vercel"],
       url: "https://www.arthur-heude.dev/",
       disabled: false,
@@ -50,7 +60,20 @@ export class ProjectComponent {
       id: 2,
       title: "Ubeer",
       description: "Ubeer est fortement inspirée d'Uber Eats. C'est une application web monolithique de gestion de commandes pour les brasseries.",
-      repository: "https://github.com/orgs/ubeer-aw/repositories",
+      repositories: [
+        {
+          url: "https://github.com/orgs/ubeer-aw/repositories",
+          title: "GitHub"
+        },
+        {
+          url: "https://github.com/Anymok/ubeer-frontend",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/ubeer-backend",
+          title: "Backend"
+        }
+      ],
       technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"],
       url: "https://ubeer-front.vercel.app/",
       disabled: false,
@@ -72,7 +95,12 @@ export class ProjectComponent {
       id: 3,
       title: "Archi Flower",
       description: "Archi Flower est une application en microservices développée avec Ionic (mobile et web), qui permet de commander des fleurs en ligne.",
-      repository: "https://gitlab.com/poc-archi-flower",
+      repositories: [
+        {
+          url: "https://gitlab.com/poc-archi-flower",
+          title: "GitLab"
+        }
+      ],
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://archiflower-front.vercel.app/",
       disabled: false,
@@ -94,7 +122,12 @@ export class ProjectComponent {
       id: 4,
       title: "Pomodoro",
       description: "Pomodoro est une application web qui permet de gérer son temps à l'aide d'un chronomètre. Il est possible de personnaliser le minuteur et de consulter l'historique des dernières sessions.",
-      repository: "https://gitlab.com/pomodoro-ra",
+      repositories: [
+        {
+          url: "https://gitlab.com/pomodoro-ra",
+          title: "GitLab"
+        }
+      ],
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
@@ -114,7 +147,12 @@ export class ProjectComponent {
       id: 5,
       title: "PayeTonKawa",
       description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne.",
-      repository: "https://gitlab.com/payetonkawa-varea",
+      repositories: [
+        {
+          url: "https://gitlab.com/payetonkawa-varea",
+          title: "GitLab"
+        }
+      ],
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "https://payetonkawa-front.vercel.app/",
       disabled: false,
@@ -137,7 +175,12 @@ export class ProjectComponent {
       id: 1,
       title: "Portfolio",
       description: "My portfolio showcases my skills and projects.",
-      repository: "https://github.com/Anymok/portfolio-ha",
+      repositories: [
+        {
+          url: "https://github.com/Anymok/portfolio-ha",
+          title: "Frontend"
+        }
+      ],
       technologies: ["Angular", "TypeScript", "Vercel"],
       url: "https://www.arthur-heude.dev/",
       disabled: false,
@@ -157,7 +200,16 @@ export class ProjectComponent {
       id: 2,
       title: "Ubeer",
       description: "Ubeer is heavily inspired by Uber Eats. It's a monolithic web application for managing brewery orders.",
-      repository: "https://github.com/orgs/ubeer-aw/repositories",
+      repositories: [
+        {
+          url: "https://github.com/Anymok/ubeer-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/ubeer-back",
+          title: "Backend"
+        }
+      ],
       technologies: ["React", "Spring Boot", "MySQL","Vercel", "VPS OVH", "Docker"],
       url: "https://ubeer-front.vercel.app/",
       disabled: false,
@@ -179,7 +231,24 @@ export class ProjectComponent {
       id: 3,
       title: "Archi Flower",
       description: "Archi Flower is a microservices application developed with Ionic (mobile and web) that allows ordering flowers online.",
-      repository: "https://gitlab.com/poc-archi-flower",
+      repositories: [
+        {
+          url: "https://github.com/Anymok/archiflower-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-cart-service",
+          title: "Backend Cart"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-catalog-service",
+          title: "Backend Catalog"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-order-service",
+          title: "Backend Order"
+        }
+      ],
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://archiflower-front.vercel.app/",
       disabled: false,
@@ -201,7 +270,16 @@ export class ProjectComponent {
       id: 4,
       title: "Pomodoro",
       description: "Pomodoro is a web application that helps manage time using a timer. You can customize the timer and view the history of recent sessions.",
-      repository: "https://gitlab.com/pomodoro-ra",
+      repositories: [
+          {
+            url: "https://github.com/Anymok/pomodoro-front",
+            title: "Frontend"
+          },
+          {
+            url: "https://github.com/Anymok/pomodoro-back",
+            title: "Backend"
+          }
+      ],
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
@@ -221,7 +299,28 @@ export class ProjectComponent {
       id: 5,
       title: "PayeTonKawa",
       description: "PayeTonKawa is a web application for buying coffee online.",
-      repository: "https://gitlab.com/payetonkawa-varea",
+      repositories: [
+        {
+          url: "https://github.com/Anymok/payetonkawa-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-product-service",
+          title: "Backend Product"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-order-service",
+          title: "Backend Order"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-inventory-service",
+          title: "Backend Inventory"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-client-service",
+          title: "Backend Client"
+        }
+      ],
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "https://payetonkawa-front.vercel.app/",
       disabled: false,
@@ -249,6 +348,18 @@ export class ProjectComponent {
 
   getTranslation(key: string): string {
     return this.languageService.translate(key);
+  }
+
+  getRepositoryIcon(url: string): string {
+    if (url.includes('github.com')) {
+      return 'fab fa-github';
+    } else if (url.includes('gitlab.com')) {
+      return 'fab fa-gitlab';
+    } else if (url.includes('bitbucket.org')) {
+      return 'fab fa-bitbucket';
+    } else {
+      return 'fas fa-code-branch';
+    }
   }
 
   openModal(project: Project): void {

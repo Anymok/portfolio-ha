@@ -111,14 +111,16 @@
             </div>
 
             <div class="modal-footer">
-                <a 
-                    [href]="selectedProject.repository" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="btn btn-primary">
-                    <i class="fab fa-github"></i>
-                    <span>{{ getTranslation('projects.repository') }}</span>
-                </a>
+                @for (repo of selectedProject.repositories; track repo.url) {
+                    <a 
+                        [href]="repo.url" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+                        <i [class]="getRepositoryIcon(repo.url)"></i>
+                        <span>{{ repo.title }}</span>
+                    </a>
+                }
                 @if (!selectedProject.disabled && selectedProject.url) {
                     <a 
                         [href]="selectedProject.url" 
