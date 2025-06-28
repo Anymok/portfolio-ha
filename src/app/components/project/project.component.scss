@@ -612,7 +612,7 @@
         display: flex;
 
         &:hover::after {
-            content: "Non disponible pour le moment";
+            content: "Not available";
             position: absolute;
             bottom: 100%;
             left: 50%;

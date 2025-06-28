@@ -38,7 +38,7 @@ export class ProjectComponent {
       repositories: [
         {
           url: "https://github.com/Anymok/portfolio-ha",
-          title: "GitHub"
+          title: "Frontend"
         }
       ],
       technologies: ["Angular", "TypeScript", "Vercel"],
@@ -62,15 +62,11 @@ export class ProjectComponent {
       description: "Ubeer est fortement inspirée d'Uber Eats. C'est une application web monolithique de gestion de commandes pour les brasseries.",
       repositories: [
         {
-          url: "https://github.com/orgs/ubeer-aw/repositories",
-          title: "GitHub"
-        },
-        {
-          url: "https://github.com/Anymok/ubeer-frontend",
+          url: "https://github.com/Anymok/ubeer-front",
           title: "Frontend"
         },
         {
-          url: "https://github.com/Anymok/ubeer-backend",
+          url: "https://github.com/Anymok/ubeer-back",
           title: "Backend"
         }
       ],
@@ -97,8 +93,20 @@ export class ProjectComponent {
       description: "Archi Flower est une application en microservices développée avec Ionic (mobile et web), qui permet de commander des fleurs en ligne.",
       repositories: [
         {
-          url: "https://gitlab.com/poc-archi-flower",
-          title: "GitLab"
+          url: "https://github.com/Anymok/archiflower-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-cart-service",
+          title: "Backend Cart"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-catalog-service",
+          title: "Backend Catalog"
+        },
+        {
+          url: "https://github.com/Anymok/archiflower-order-service",
+          title: "Backend Order"
         }
       ],
       technologies: ["Ionic", "Spring boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
@@ -124,10 +132,14 @@ export class ProjectComponent {
       description: "Pomodoro est une application web qui permet de gérer son temps à l'aide d'un chronomètre. Il est possible de personnaliser le minuteur et de consulter l'historique des dernières sessions.",
       repositories: [
         {
-          url: "https://gitlab.com/pomodoro-ra",
-          title: "GitLab"
+          url: "https://github.com/Anymok/pomodoro-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/pomodoro-back",
+          title: "Backend"
         }
-      ],
+    ],
       technologies: ["React", "Spring Boot", "MySQL", "Vercel", "VPS OVH", "Docker", "Gitlab CI/CD"],
       url: "https://pomodoro-front-gamma.vercel.app/",
       disabled: false,
@@ -146,19 +158,39 @@ export class ProjectComponent {
     {
       id: 5,
       title: "PayeTonKawa",
-      description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne.",
+      description: "PayeTonKawa est une application web qui permet d'acheter du café en ligne. Application non déployée car elle n'est compatible qu'avec Google Cloud Platform. Je préfère ne pas la déployer pour éviter les surprises.",
       repositories: [
         {
-          url: "https://gitlab.com/payetonkawa-varea",
-          title: "GitLab"
+          url: "https://github.com/Anymok/payetonkawa-front",
+          title: "Frontend"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-product-service",
+          title: "Backend Product"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-order-service",
+          title: "Backend Order"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-inventory-service",
+          title: "Backend Inventory"
+        },
+        {
+          url: "https://github.com/Anymok/payetonkawa-client-service",
+          title: "Backend Client"
         }
       ],
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "https://payetonkawa-front.vercel.app/",
-      disabled: false,
+      disabled: true,
       type: 'team',
       features: [
-        "",
+        "Commande de café en ligne",
+        "Gestion des commandes",
+        "Gestion des produits",
+        "Gestion des inventaires",
+        "Gestion des clients",
       ],
       architecture: [
         "Application développée avec React",
@@ -298,7 +330,7 @@ export class ProjectComponent {
     {
       id: 5,
       title: "PayeTonKawa",
-      description: "PayeTonKawa is a web application for buying coffee online.",
+      description: "PayeTonKawa is a web application for buying coffee online. Application is not deployed because she is only compatible with Google Cloud Platform. I prefer to don't deploy it to avoid surprises.",
       repositories: [
         {
           url: "https://github.com/Anymok/payetonkawa-front",
@@ -323,10 +355,14 @@ export class ProjectComponent {
       ],
       technologies: ["React", "Node.js", "Tailwind CSS", "Google Cloud Platform", "Docker", "Gitlab CI/CD"],
       url: "https://payetonkawa-front.vercel.app/",
-      disabled: false,
+      disabled: true,
       type: 'team',
       features: [
-        "",
+        "Online coffee ordering",
+        "Client management",
+        "Order management",
+        "Product management",
+        "Inventory management",
       ],
       architecture: [
         "Application developed with React",
